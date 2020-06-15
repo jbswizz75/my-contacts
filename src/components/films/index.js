@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, InputGroup, FormControl } from 'react-bootstrap';
+import { api } from '../../config/key';
 import Display from './Display';
 
 class Counter extends Component {
@@ -14,13 +15,13 @@ class Counter extends Component {
   }
 
   componentDidMount() {
-    fetch('https://api.themoviedb.org/3/discover/movie?api_key=43ef6153920975271a20000df094734d&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1')
+    fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${api}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`)
       .then((response) => response.json())
       .then((data) => this.setState({ data, isLoading: true }));
   }
 
   toogleView(theme) {
-    fetch(`https://api.themoviedb.org/3/discover/${theme}?api_key=43ef6153920975271a20000df094734d&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`)
+    fetch(`https://api.themoviedb.org/3/discover/${theme}?api_key=${api}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`)
       .then((response) => response.json())
       .then((data) => this.setState({ data, isLoading: true }));
   }
@@ -28,8 +29,7 @@ class Counter extends Component {
   handleSubmit(e) {
     e.preventDefault();
     const { input } = this.state;
-    console.log(input);
-    fetch(`https://api.themoviedb.org/3/search/movie?api_key=43ef6153920975271a20000df094734d&language=en-US&query=${input}=&page=1&include_adult=false`)
+    fetch(`https://api.themoviedb.org/3/search/movie?api_key=${api}&language=en-US&query=${input}=&page=1&include_adult=false`)
       .then((response) => response.json())
       .then((data) => this.setState({ data }));
   }
