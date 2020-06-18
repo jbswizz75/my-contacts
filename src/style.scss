@@ -1,0 +1,57 @@
+body {
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+  }
+
+  .cover_photo:hover {
+    cursor: pointer;
+  }
+
+  .cover_photo {
+    transition: all 0.3s ease;
+  }
+
+  /* // Button home // */
+
+  .button, .select {
+    color: rgb(8,79,233);
+    background: #fff;
+    border: 0px;
+    border-radius: 50px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+  }
+
+  .button:hover, .select:hover {
+    color: rgba(8,79,233,.5);
+    background: #fff;
+    border: 0px;
+    border-radius: 50px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+  }
+
+  .form-control {
+    color: rgba(8,79,233,.5);
+    background: #fff;
+    border: 0px;
+    border-radius: 50px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+  }
+
+  /* // Image home // */
+
+  .img-fluid {
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.2);
+  }
+
+  /* // Animate image home // */
+

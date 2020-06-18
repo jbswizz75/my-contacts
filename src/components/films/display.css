@@ -1,7 +1,0 @@
-.cover_photo:hover {
-  cursor: pointer;
-}
-
-.cover_photo {
-  transition: all 0.3s ease;
-}

@@ -4,19 +4,21 @@ import { AiFillStar } from 'react-icons/ai';
 
 const Rating = ({ rate }) => (
   <div style={{
-    backgroundColor: '#fff',
     display: 'flex',
-    width: 70,
-    justifyContent: 'space-around',
+    marginTop: 10,
+    width: 50,
+    height: 50,
+    fontSize: 14,
+    justifyContent: 'center',
     alignContent: 'center',
-    paddingTop: 12,
-    paddingLeft: 10,
-    paddingRight: 10,
-    borderRadius: 10,
+    padding: 15,
+    borderRadius: 50,
+    color: '#fff',
+    backgroundColor: 'rgba(0,0,0,.5)',
   }}
   >
     <div>
-      <AiFillStar size={20} color="#ffbf00" />
+      <AiFillStar size={15} color="#ffbf00" />
     </div>
     <div>
       <p>{rate}</p>

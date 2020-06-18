@@ -19,7 +19,7 @@ class filmDetails extends Component {
     };
     this.params = {
       api_key: api,
-      language: 'en-US',
+      language: 'fr-FR',
     };
   }
 
@@ -51,7 +51,7 @@ class filmDetails extends Component {
             <div style={{
               position: 'absolute',
               top: 0,
-              height: '100vh',
+              minHeight: '100vh',
               width: '100%',
               backgroundColor: 'black',
               opacity: 0.5,

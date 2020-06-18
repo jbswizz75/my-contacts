@@ -21,11 +21,11 @@ class Counter extends Component {
     };
     this.params = {
       api_key: api,
-      language: 'en-US',
+      language: 'fr-FR',
       sort_by: 'popularity.desc',
-      include_adult: false,
-      include_video: false,
-      page: 1,
+      include_adult: true,
+      include_video: true,
+      page: 200,
     };
   }
 
@@ -35,6 +35,8 @@ class Counter extends Component {
     }).then((res) => {
       this.setState({ data: res.data, isLoading: true });
     });
+
+    console.log(api);
   }
 
   toogleView(theme) {
@@ -71,11 +73,11 @@ class Counter extends Component {
   }
 
   displayByGenre(select) {
-    console.log(select);
+    // console.log(select);
     const paramsSubmit = this.params;
     // const { select } = this.state;
     paramsSubmit.with_genres = select;
-    axios.get('https://api.themoviedb.org/3/discover/movie?', {
+    axios.get('https://api.themoviedb.org/3/discover/movie/?', {
       params: paramsSubmit,
     })
       .then((res) => {
@@ -105,16 +107,16 @@ class Counter extends Component {
     } = this.state;
     if (!isLoading && !genres) {
       return (
-        <Spinner animation="border" variant="primary" />
+        <Spinner animation="border" variant="secondary" />
       );
     }
     return (
       <div>
         <div className="mt-3" style={{ display: 'flex', justifyContent: 'center' }}>
-          <Button style={{ marginRight: 10 }} className="button" onClick={() => this.toogleView('movie')} variant="primary">Voir Films</Button>
-          <Button style={{ marginRight: 10 }} onClick={() => this.toogleView('tv')} variant="primary">Voir Séries</Button>
-          <Button style={{ marginRight: 10 }} onClick={() => this.topRated()} variant="primary">Les meilleurs</Button>
-          <select value={select} onChange={(event) => this.handleChangeSelect(event)}>
+          <Button style={{ marginRight: 10 }} className="button" onClick={() => this.toogleView('movie')} variant="primary">Films</Button>
+          <Button style={{ marginRight: 10 }} className="button" onClick={() => this.toogleView('tv')} variant="primary">Séries</Button>
+          <Button style={{ marginRight: 10 }} className="button" onClick={() => this.topRated()} variant="primary">Les plus vus</Button>
+          <select style={{ marginRight: 10 }} className="select" value={select} onChange={(event) => this.handleChangeSelect(event)}>
             <option>Categories</option>
             <option value={28}>Action</option>
             <option value={27}>Horreur</option>
@@ -124,7 +126,7 @@ class Counter extends Component {
         <form style={{ paddingRight: 500, paddingLeft: 500 }} onSubmit={(event) => this.handleSubmit(event)}>
           <InputGroup className="mb-3 mt-3">
             <FormControl
-              placeholder="Chercher un Film"
+              placeholder="Chercher un film ou une série"
               aria-label="Chercher un Film"
               aria-describedby="basic-addon2"
               value={input}
