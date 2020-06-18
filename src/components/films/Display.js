@@ -8,8 +8,9 @@ import {
   Image,
 } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Rating from './Rating';
+// import Like from './like';
 import './display.css';
 
 // eslint-disable-next-line react/prefer-stateless-function
@@ -33,12 +34,17 @@ class Display extends Component {
                 md={3}
                 key={element.id}
               >
-                <div className="cover_photo">
-                  <Image src={`https://image.tmdb.org/t/p/original/${element.poster_path}`} fluid />
-                  <div style={{ position: 'absolute', top: 70, right: 60 }}>
-                    <Rating rate={element.vote_average} />
+                <Link to={`/${element.id}`}>
+                  <div>
+                    <Image src={`https://image.tmdb.org/t/p/original/${element.poster_path}`} fluid />
+                    <div style={{ position: 'absolute', top: 70, right: 60 }}>
+                      <Rating rate={element.vote_average} />
+                    </div>
+                    <div className="cover_photo" style={{ position: 'absolute', top: 70, left: 70 }}>
+                      {/* <Like /> */}
+                    </div>
                   </div>
-                </div>
+                </Link>
               </Col>
             ))}
           </Row>
